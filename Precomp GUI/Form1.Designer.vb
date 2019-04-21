@@ -154,7 +154,7 @@ Partial Class Form1
         Me.GroupBox2.Size = New System.Drawing.Size(209, 50)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Recompression mode:"
+        Me.GroupBox2.Text = "Precompression mode:"
         '
         'BrutePrecompression
         '

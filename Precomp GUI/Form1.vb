@@ -74,7 +74,10 @@
             process.BeginOutputReadLine()
             process.BeginErrorReadLine()
             process.WaitForExit()
-            StartButton.BeginInvoke(Sub() StartButton.Enabled = True)
+            StartButton.BeginInvoke(Sub()
+                                        StartButton.Enabled = True
+                                        StartButton.Text = "Start"
+                                    End Sub)
             ClearLogButton.BeginInvoke(Sub() ClearLogButton.Enabled = True)
             SaveLogButton.BeginInvoke(Sub() SaveLogButton.Enabled = True)
             InputFileTextbox.BeginInvoke(Sub() InputFileTextbox.Enabled = True)
@@ -147,6 +150,7 @@
         End If
         Params += OutputPathString + " """ + InputFileTextbox.Text + """ "
         StartButton.Enabled = False
+        StartButton.Text = "Running..."
         ClearLogButton.Enabled = False
         SaveLogButton.Enabled = False
         InputFileTextbox.Enabled = False

@@ -122,4 +122,22 @@
             OutputFileTextbox.Text = SaveFileDialog1.FileName
         End If
     End Sub
+
+    Private Sub StartButton_Click(sender As Object, e As EventArgs) Handles StartButton.Click
+        Dim OutputPathString As String = String.Empty
+        If Not String.IsNullOrEmpty(OutputFileTextbox.Text) Then
+            If Not IO.Directory.Exists(OutputFileTextbox.Text) Then IO.Directory.CreateDirectory(OutputFileTextbox.Text)
+            OutputPathString = "-o" + OutputFileTextbox.Text
+        End If
+        Dim Params As String = "-d9999 -cn -v "
+        If IntensePrecompression.Checked Then
+            Params += "-intense "
+        ElseIf BrutePrecompression.Checked Then
+            Params += "-brute "
+        End If
+        Params += """" + InputFileTextbox.Text + """ """ + OutputPathString + """"
+        StartButton.Enabled = False
+        Dim StartTask As New Threading.Thread(Sub() PrecompThread("precomp v0.4.7.exe", Params))
+        StartTask.Start()
+    End Sub
 End Class

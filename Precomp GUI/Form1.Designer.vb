@@ -42,9 +42,9 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.SaveLogButton = New System.Windows.Forms.Button()
         Me.ClearLogButton = New System.Windows.Forms.Button()
+        Me.SaveLogButton = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.GroupBox1.SuspendLayout()
@@ -268,6 +268,26 @@ Partial Class Form1
         Me.Panel2.Size = New System.Drawing.Size(395, 275)
         Me.Panel2.TabIndex = 1
         '
+        'ClearLogButton
+        '
+        Me.ClearLogButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ClearLogButton.Location = New System.Drawing.Point(136, 216)
+        Me.ClearLogButton.Name = "ClearLogButton"
+        Me.ClearLogButton.Size = New System.Drawing.Size(122, 23)
+        Me.ClearLogButton.TabIndex = 14
+        Me.ClearLogButton.Text = "Clear Log"
+        Me.ClearLogButton.UseVisualStyleBackColor = True
+        '
+        'SaveLogButton
+        '
+        Me.SaveLogButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.SaveLogButton.Location = New System.Drawing.Point(264, 216)
+        Me.SaveLogButton.Name = "SaveLogButton"
+        Me.SaveLogButton.Size = New System.Drawing.Size(122, 23)
+        Me.SaveLogButton.TabIndex = 13
+        Me.SaveLogButton.Text = "Save Log"
+        Me.SaveLogButton.UseVisualStyleBackColor = True
+        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.GroupBox1)
@@ -285,26 +305,6 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(395, 275)
         Me.Panel1.TabIndex = 0
-        '
-        'SaveLogButton
-        '
-        Me.SaveLogButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SaveLogButton.Location = New System.Drawing.Point(264, 216)
-        Me.SaveLogButton.Name = "SaveLogButton"
-        Me.SaveLogButton.Size = New System.Drawing.Size(122, 23)
-        Me.SaveLogButton.TabIndex = 13
-        Me.SaveLogButton.Text = "Save Log"
-        Me.SaveLogButton.UseVisualStyleBackColor = True
-        '
-        'ClearLogButton
-        '
-        Me.ClearLogButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ClearLogButton.Location = New System.Drawing.Point(136, 216)
-        Me.ClearLogButton.Name = "ClearLogButton"
-        Me.ClearLogButton.Size = New System.Drawing.Size(122, 23)
-        Me.ClearLogButton.TabIndex = 14
-        Me.ClearLogButton.Text = "Clear Log"
-        Me.ClearLogButton.UseVisualStyleBackColor = True
         '
         'OpenFileDialog1
         '

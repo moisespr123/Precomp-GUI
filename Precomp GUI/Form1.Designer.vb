@@ -32,22 +32,22 @@ Partial Class Form1
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Step2label = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.BrutePrecompression = New System.Windows.Forms.RadioButton()
+        Me.IntensePrecompression = New System.Windows.Forms.RadioButton()
+        Me.NormalPrecompression = New System.Windows.Forms.RadioButton()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ProgressLog = New System.Windows.Forms.RichTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Step1label
@@ -141,9 +141,9 @@ Partial Class Form1
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.RadioButton5)
-        Me.GroupBox2.Controls.Add(Me.RadioButton4)
-        Me.GroupBox2.Controls.Add(Me.RadioButton3)
+        Me.GroupBox2.Controls.Add(Me.BrutePrecompression)
+        Me.GroupBox2.Controls.Add(Me.IntensePrecompression)
+        Me.GroupBox2.Controls.Add(Me.NormalPrecompression)
         Me.GroupBox2.Location = New System.Drawing.Point(9, 160)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(209, 50)
@@ -151,38 +151,38 @@ Partial Class Form1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Recompression mode:"
         '
-        'RadioButton5
+        'BrutePrecompression
         '
-        Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Location = New System.Drawing.Point(134, 19)
-        Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(50, 17)
-        Me.RadioButton5.TabIndex = 2
-        Me.RadioButton5.TabStop = True
-        Me.RadioButton5.Text = "Brute"
-        Me.RadioButton5.UseVisualStyleBackColor = True
+        Me.BrutePrecompression.AutoSize = True
+        Me.BrutePrecompression.Location = New System.Drawing.Point(134, 19)
+        Me.BrutePrecompression.Name = "BrutePrecompression"
+        Me.BrutePrecompression.Size = New System.Drawing.Size(50, 17)
+        Me.BrutePrecompression.TabIndex = 2
+        Me.BrutePrecompression.TabStop = True
+        Me.BrutePrecompression.Text = "Brute"
+        Me.BrutePrecompression.UseVisualStyleBackColor = True
         '
-        'RadioButton4
+        'IntensePrecompression
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(70, 19)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(60, 17)
-        Me.RadioButton4.TabIndex = 1
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "Intense"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.IntensePrecompression.AutoSize = True
+        Me.IntensePrecompression.Location = New System.Drawing.Point(70, 19)
+        Me.IntensePrecompression.Name = "IntensePrecompression"
+        Me.IntensePrecompression.Size = New System.Drawing.Size(60, 17)
+        Me.IntensePrecompression.TabIndex = 1
+        Me.IntensePrecompression.TabStop = True
+        Me.IntensePrecompression.Text = "Intense"
+        Me.IntensePrecompression.UseVisualStyleBackColor = True
         '
-        'RadioButton3
+        'NormalPrecompression
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(6, 19)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(58, 17)
-        Me.RadioButton3.TabIndex = 0
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Normal"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.NormalPrecompression.AutoSize = True
+        Me.NormalPrecompression.Location = New System.Drawing.Point(6, 19)
+        Me.NormalPrecompression.Name = "NormalPrecompression"
+        Me.NormalPrecompression.Size = New System.Drawing.Size(58, 17)
+        Me.NormalPrecompression.TabIndex = 0
+        Me.NormalPrecompression.TabStop = True
+        Me.NormalPrecompression.Text = "Normal"
+        Me.NormalPrecompression.UseVisualStyleBackColor = True
         '
         'Button3
         '
@@ -249,6 +249,17 @@ Partial Class Form1
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(802, 281)
         Me.TableLayoutPanel1.TabIndex = 13
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Controls.Add(Me.ProgressLog)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(404, 3)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(395, 275)
+        Me.Panel2.TabIndex = 1
+        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.GroupBox1)
@@ -267,17 +278,6 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(395, 275)
         Me.Panel1.TabIndex = 0
         '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Controls.Add(Me.Label3)
-        Me.Panel2.Controls.Add(Me.ProgressLog)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(404, 3)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(395, 275)
-        Me.Panel2.TabIndex = 1
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -291,10 +291,10 @@ Partial Class Form1
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -309,9 +309,9 @@ Partial Class Form1
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Step2label As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents RadioButton5 As RadioButton
-    Friend WithEvents RadioButton4 As RadioButton
-    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents BrutePrecompression As RadioButton
+    Friend WithEvents IntensePrecompression As RadioButton
+    Friend WithEvents NormalPrecompression As RadioButton
     Friend WithEvents Button3 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents ProgressLog As RichTextBox

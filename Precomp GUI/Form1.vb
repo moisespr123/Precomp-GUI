@@ -76,6 +76,10 @@
             StartButton.BeginInvoke(Sub() StartButton.Enabled = True)
             ClearLogButton.BeginInvoke(Sub() ClearLogButton.Enabled = True)
             SaveLogButton.BeginInvoke(Sub() SaveLogButton.Enabled = True)
+            InputFileTextbox.BeginInvoke(Sub() InputFileTextbox.Enabled = True)
+            OutputFileTextbox.BeginInvoke(Sub() OutputFileTextbox.Enabled = True)
+            BrowseInputButton.BeginInvoke(Sub() BrowseInputButton.Enabled = True)
+            BrowseOutputButton.BeginInvoke(Sub() BrowseOutputButton.Enabled = True)
         End Using
     End Sub
 
@@ -126,18 +130,35 @@
     Private Sub StartButton_Click(sender As Object, e As EventArgs) Handles StartButton.Click
         Dim OutputPathString As String = String.Empty
         If Not String.IsNullOrEmpty(OutputFileTextbox.Text) Then
-            If Not IO.Directory.Exists(OutputFileTextbox.Text) Then IO.Directory.CreateDirectory(OutputFileTextbox.Text)
-            OutputPathString = "-o" + OutputFileTextbox.Text
+            If Not IO.Directory.Exists(OutputFileTextbox.Text) Then IO.Directory.CreateDirectory(IO.Path.GetDirectoryName(OutputFileTextbox.Text))
+            OutputPathString = "-o""" + OutputFileTextbox.Text + """"
         End If
-        Dim Params As String = "-d9999 -cn -v "
+        Dim Params As String = "-d9999 -cn -v -e "
         If IntensePrecompression.Checked Then
             Params += "-intense "
         ElseIf BrutePrecompression.Checked Then
             Params += "-brute "
         End If
-        Params += """" + InputFileTextbox.Text + """ """ + OutputPathString + """"
+        Params += OutputPathString + " """ + InputFileTextbox.Text + """ "
         StartButton.Enabled = False
+        ClearLogButton.Enabled = False
+        SaveLogButton.Enabled = False
+        InputFileTextbox.Enabled = False
+        OutputFileTextbox.Enabled = False
+        BrowseInputButton.Enabled = False
+        BrowseOutputButton.Enabled = False
         Dim StartTask As New Threading.Thread(Sub() PrecompThread("precomp v0.4.7.exe", Params))
         StartTask.Start()
+    End Sub
+
+    Private Sub Form1_DragEnter(sender As Object, e As DragEventArgs) Handles MyBase.DragEnter
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            e.Effect = DragDropEffects.Copy
+        End If
+    End Sub
+    Private Sub Form1_DragDrop(sender As Object, e As DragEventArgs) Handles MyBase.DragDrop
+        If InputFileTextbox.Enabled Then
+            InputFileTextbox.Text = CType(e.Data.GetData(DataFormats.FileDrop), String())(0)
+        End If
     End Sub
 End Class

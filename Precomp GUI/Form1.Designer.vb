@@ -43,6 +43,8 @@ Partial Class Form1
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.SaveLogButton = New System.Windows.Forms.Button()
+        Me.ClearLogButton = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -211,7 +213,7 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ProgressLog.Location = New System.Drawing.Point(6, 25)
         Me.ProgressLog.Name = "ProgressLog"
-        Me.ProgressLog.Size = New System.Drawing.Size(380, 228)
+        Me.ProgressLog.Size = New System.Drawing.Size(380, 185)
         Me.ProgressLog.TabIndex = 10
         Me.ProgressLog.Text = ""
         '
@@ -253,6 +255,8 @@ Partial Class Form1
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.ClearLogButton)
+        Me.Panel2.Controls.Add(Me.SaveLogButton)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.ProgressLog)
@@ -279,6 +283,26 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(395, 275)
         Me.Panel1.TabIndex = 0
+        '
+        'SaveLogButton
+        '
+        Me.SaveLogButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.SaveLogButton.Location = New System.Drawing.Point(264, 216)
+        Me.SaveLogButton.Name = "SaveLogButton"
+        Me.SaveLogButton.Size = New System.Drawing.Size(122, 23)
+        Me.SaveLogButton.TabIndex = 13
+        Me.SaveLogButton.Text = "Save Log"
+        Me.SaveLogButton.UseVisualStyleBackColor = True
+        '
+        'ClearLogButton
+        '
+        Me.ClearLogButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ClearLogButton.Location = New System.Drawing.Point(136, 216)
+        Me.ClearLogButton.Name = "ClearLogButton"
+        Me.ClearLogButton.Size = New System.Drawing.Size(122, 23)
+        Me.ClearLogButton.TabIndex = 14
+        Me.ClearLogButton.Text = "Clear Log"
+        Me.ClearLogButton.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -322,4 +346,6 @@ Partial Class Form1
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents ClearLogButton As Button
+    Friend WithEvents SaveLogButton As Button
 End Class

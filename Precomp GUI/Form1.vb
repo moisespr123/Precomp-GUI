@@ -58,4 +58,39 @@
             End If
         End If
     End Sub
+    Private Sub PrecompThread(Compressor As String, Params As String)
+        Using process As New Process()
+            process.StartInfo.WorkingDirectory = IO.Path.GetDirectoryName(Compressor)
+            process.StartInfo.FileName = Compressor
+            process.StartInfo.Arguments = Params
+            process.StartInfo.UseShellExecute = False
+            process.StartInfo.RedirectStandardOutput = True
+            process.StartInfo.RedirectStandardError = True
+            process.StartInfo.CreateNoWindow = True
+            AddHandler process.OutputDataReceived, New DataReceivedEventHandler(AddressOf UpdateLogEventHandler)
+            AddHandler process.ErrorDataReceived, New DataReceivedEventHandler(AddressOf UpdateLogEventHandler)
+            process.Start()
+            process.BeginOutputReadLine()
+            process.BeginErrorReadLine()
+            process.WaitForExit()
+            StartButton.BeginInvoke(Sub() StartButton.Enabled = True)
+            ClearLogButton.BeginInvoke(Sub() ClearLogButton.Enabled = True)
+            SaveLogButton.BeginInvoke(Sub() SaveLogButton.Enabled = True)
+        End Using
+    End Sub
+
+    Private Sub SaveLogButton_Click(sender As Object, e As EventArgs) Handles SaveLogButton.Click
+        Dim SaveDialog As New SaveFileDialog With {
+          .Filter = "Text file|*.txt",
+          .FileName = String.Empty,
+          .Title = "Browse to save the log"}
+        Dim result As DialogResult = SaveDialog.ShowDialog
+        If result = DialogResult.OK Then
+            If Not String.IsNullOrWhiteSpace(SaveDialog.FileName) Then My.Computer.FileSystem.WriteAllText(SaveDialog.FileName, ProgressLog.Text, False)
+        End If
+    End Sub
+
+    Private Sub ClearLogButton_Click(sender As Object, e As EventArgs) Handles ClearLogButton.Click
+        ProgressLog.Text = String.Empty
+    End Sub
 End Class

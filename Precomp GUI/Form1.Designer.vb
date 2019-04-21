@@ -47,6 +47,7 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.VerboseLogging = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -290,6 +291,7 @@ Partial Class Form1
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.VerboseLogging)
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Step1label)
@@ -309,6 +311,16 @@ Partial Class Form1
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'VerboseLogging
+        '
+        Me.VerboseLogging.AutoSize = True
+        Me.VerboseLogging.Location = New System.Drawing.Point(224, 179)
+        Me.VerboseLogging.Name = "VerboseLogging"
+        Me.VerboseLogging.Size = New System.Drawing.Size(106, 17)
+        Me.VerboseLogging.TabIndex = 12
+        Me.VerboseLogging.Text = "Verbose Logging"
+        Me.VerboseLogging.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -357,4 +369,5 @@ Partial Class Form1
     Friend WithEvents SaveLogButton As Button
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents VerboseLogging As CheckBox
 End Class

@@ -6,6 +6,7 @@
         NormalPrecompression.Checked = My.Settings.Normal
         IntensePrecompression.Checked = My.Settings.Intense
         BrutePrecompression.Checked = My.Settings.Brute
+        VerboseLogging.Checked = My.Settings.VerboseLogging
     End Sub
     Private Sub PrecompressRadiobutton_CheckedChanged(sender As Object, e As EventArgs) Handles PrecompressRadiobutton.CheckedChanged
         If PrecompressRadiobutton.Checked Then
@@ -133,7 +134,8 @@
             If Not IO.Directory.Exists(OutputFileTextbox.Text) Then IO.Directory.CreateDirectory(IO.Path.GetDirectoryName(OutputFileTextbox.Text))
             OutputPathString = "-o""" + OutputFileTextbox.Text + """"
         End If
-        Dim Params As String = "-d9999 -cn -v -e "
+        Dim Params As String = "-d9999 -cn -e "
+        If VerboseLogging.Checked Then Params += "-v "
         If IntensePrecompression.Checked Then
             Params += "-intense "
         ElseIf BrutePrecompression.Checked Then
@@ -160,5 +162,10 @@
         If InputFileTextbox.Enabled Then
             InputFileTextbox.Text = CType(e.Data.GetData(DataFormats.FileDrop), String())(0)
         End If
+    End Sub
+
+    Private Sub VerboseLogging_CheckedChanged(sender As Object, e As EventArgs) Handles VerboseLogging.CheckedChanged
+        My.Settings.VerboseLogging = VerboseLogging.Checked
+        My.Settings.Save()
     End Sub
 End Class

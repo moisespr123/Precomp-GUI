@@ -26,10 +26,10 @@ Partial Class Form1
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.RecompressRadiobutton = New System.Windows.Forms.RadioButton()
         Me.PrecompressRadiobutton = New System.Windows.Forms.RadioButton()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.InputFileTextbox = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.OutputFileTextbox = New System.Windows.Forms.TextBox()
         Me.Step2label = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BrutePrecompression = New System.Windows.Forms.RadioButton()
@@ -92,14 +92,14 @@ Partial Class Form1
         Me.PrecompressRadiobutton.Text = "Precompress"
         Me.PrecompressRadiobutton.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'InputFileTextbox
         '
-        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.InputFileTextbox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.Location = New System.Drawing.Point(9, 84)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(302, 20)
-        Me.TextBox1.TabIndex = 2
+        Me.InputFileTextbox.Location = New System.Drawing.Point(9, 84)
+        Me.InputFileTextbox.Name = "InputFileTextbox"
+        Me.InputFileTextbox.Size = New System.Drawing.Size(302, 20)
+        Me.InputFileTextbox.TabIndex = 2
         '
         'Button1
         '
@@ -121,14 +121,14 @@ Partial Class Form1
         Me.Button2.Text = "Browse"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'OutputFileTextbox
         '
-        Me.TextBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.OutputFileTextbox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox2.Location = New System.Drawing.Point(9, 134)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(302, 20)
-        Me.TextBox2.TabIndex = 5
+        Me.OutputFileTextbox.Location = New System.Drawing.Point(9, 134)
+        Me.OutputFileTextbox.Name = "OutputFileTextbox"
+        Me.OutputFileTextbox.Size = New System.Drawing.Size(302, 20)
+        Me.OutputFileTextbox.TabIndex = 5
         '
         'Step2label
         '
@@ -266,12 +266,12 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Step1label)
         Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.InputFileTextbox)
         Me.Panel1.Controls.Add(Me.GroupBox2)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Step2label)
-        Me.Panel1.Controls.Add(Me.TextBox2)
+        Me.Panel1.Controls.Add(Me.OutputFileTextbox)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(3, 3)
         Me.Panel1.Name = "Panel1"
@@ -303,10 +303,10 @@ Partial Class Form1
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents RecompressRadiobutton As RadioButton
     Friend WithEvents PrecompressRadiobutton As RadioButton
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents InputFileTextbox As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents OutputFileTextbox As TextBox
     Friend WithEvents Step2label As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents BrutePrecompression As RadioButton

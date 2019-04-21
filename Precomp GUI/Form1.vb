@@ -93,4 +93,33 @@
     Private Sub ClearLogButton_Click(sender As Object, e As EventArgs) Handles ClearLogButton.Click
         ProgressLog.Text = String.Empty
     End Sub
+
+    Private Sub BrowseInputButton_Click(sender As Object, e As EventArgs) Handles BrowseInputButton.Click
+        OpenFileDialog1.Filter = "All Files|*.*"
+        If PrecompressRadiobutton.Checked Then
+            OpenFileDialog1.Title = "Browse for a file to precompress"
+        Else
+            OpenFileDialog1.Title = "Browse for a file to recompress"
+        End If
+        If Not String.IsNullOrWhiteSpace(InputFileTextbox.Text) Then OpenFileDialog1.FileName = IO.Path.GetFileName(InputFileTextbox.Text) Else OpenFileDialog1.FileName = String.Empty
+        Dim result As DialogResult = OpenFileDialog1.ShowDialog
+        If result = DialogResult.OK Then
+            InputFileTextbox.Text = OpenFileDialog1.FileName
+        End If
+    End Sub
+
+    Private Sub BrowseOutputButton_Click(sender As Object, e As EventArgs) Handles BrowseOutputButton.Click
+        If PrecompressRadiobutton.Checked Then
+            SaveFileDialog1.Filter = "Precomp file|*.pcf"
+            SaveFileDialog1.Title = "Browse for a location to save the precompressed file"
+        Else
+            SaveFileDialog1.Filter = "All Files|*.*"
+            SaveFileDialog1.Title = "Browse for a location to save the recompressed file"
+        End If
+        If Not String.IsNullOrWhiteSpace(OutputFileTextbox.Text) Then SaveFileDialog1.FileName = IO.Path.GetFileName(OutputFileTextbox.Text) Else SaveFileDialog1.FileName = String.Empty
+        Dim result As DialogResult = SaveFileDialog1.ShowDialog
+        If result = DialogResult.OK Then
+            OutputFileTextbox.Text = SaveFileDialog1.FileName
+        End If
+    End Sub
 End Class

@@ -27,8 +27,8 @@ Partial Class Form1
         Me.RecompressRadiobutton = New System.Windows.Forms.RadioButton()
         Me.PrecompressRadiobutton = New System.Windows.Forms.RadioButton()
         Me.InputFileTextbox = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.BrowseInputButton = New System.Windows.Forms.Button()
+        Me.BrowseOutputButton = New System.Windows.Forms.Button()
         Me.OutputFileTextbox = New System.Windows.Forms.TextBox()
         Me.Step2label = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -45,6 +45,8 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.SaveLogButton = New System.Windows.Forms.Button()
         Me.ClearLogButton = New System.Windows.Forms.Button()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -103,25 +105,25 @@ Partial Class Form1
         Me.InputFileTextbox.Size = New System.Drawing.Size(302, 20)
         Me.InputFileTextbox.TabIndex = 2
         '
-        'Button1
+        'BrowseInputButton
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(317, 82)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Browse"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BrowseInputButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BrowseInputButton.Location = New System.Drawing.Point(317, 82)
+        Me.BrowseInputButton.Name = "BrowseInputButton"
+        Me.BrowseInputButton.Size = New System.Drawing.Size(75, 23)
+        Me.BrowseInputButton.TabIndex = 3
+        Me.BrowseInputButton.Text = "Browse"
+        Me.BrowseInputButton.UseVisualStyleBackColor = True
         '
-        'Button2
+        'BrowseOutputButton
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(317, 134)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 6
-        Me.Button2.Text = "Browse"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.BrowseOutputButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BrowseOutputButton.Location = New System.Drawing.Point(317, 134)
+        Me.BrowseOutputButton.Name = "BrowseOutputButton"
+        Me.BrowseOutputButton.Size = New System.Drawing.Size(75, 23)
+        Me.BrowseOutputButton.TabIndex = 6
+        Me.BrowseOutputButton.Text = "Browse"
+        Me.BrowseOutputButton.UseVisualStyleBackColor = True
         '
         'OutputFileTextbox
         '
@@ -274,8 +276,8 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.StartButton)
         Me.Panel1.Controls.Add(Me.InputFileTextbox)
         Me.Panel1.Controls.Add(Me.GroupBox2)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Controls.Add(Me.BrowseInputButton)
+        Me.Panel1.Controls.Add(Me.BrowseOutputButton)
         Me.Panel1.Controls.Add(Me.Step2label)
         Me.Panel1.Controls.Add(Me.OutputFileTextbox)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -304,6 +306,10 @@ Partial Class Form1
         Me.ClearLogButton.Text = "Clear Log"
         Me.ClearLogButton.UseVisualStyleBackColor = True
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -330,8 +336,8 @@ Partial Class Form1
     Friend WithEvents RecompressRadiobutton As RadioButton
     Friend WithEvents PrecompressRadiobutton As RadioButton
     Friend WithEvents InputFileTextbox As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents BrowseInputButton As Button
+    Friend WithEvents BrowseOutputButton As Button
     Friend WithEvents OutputFileTextbox As TextBox
     Friend WithEvents Step2label As Label
     Friend WithEvents GroupBox2 As GroupBox
@@ -348,4 +354,6 @@ Partial Class Form1
     Friend WithEvents Panel1 As Panel
     Friend WithEvents ClearLogButton As Button
     Friend WithEvents SaveLogButton As Button
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

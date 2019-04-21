@@ -40,4 +40,22 @@
         My.Settings.Save()
     End Sub
 
+    Private Sub UpdateLogEventHandler(sender As Object, e As DataReceivedEventArgs)
+        If Not e.Data = Nothing Then
+            UpdateLog(e.Data)
+        End If
+    End Sub
+    Private Delegate Sub UpdateLogInvoker(message As String)
+    Private Sub UpdateLog(message As String)
+        If ProgressLog.InvokeRequired Then
+            ProgressLog.Invoke(New UpdateLogInvoker(AddressOf UpdateLog), message)
+        Else
+            If Not String.IsNullOrWhiteSpace(message) Then
+                message = message.Replace(vbBack, "")
+                ProgressLog.AppendText(Date.Now().ToString() + " || " + message + vbCrLf)
+                ProgressLog.SelectionStart = ProgressLog.Text.Length - 1
+                ProgressLog.ScrollToCaret()
+            End If
+        End If
+    End Sub
 End Class

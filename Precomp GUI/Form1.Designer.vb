@@ -35,7 +35,7 @@ Partial Class Form1
         Me.BrutePrecompression = New System.Windows.Forms.RadioButton()
         Me.IntensePrecompression = New System.Windows.Forms.RadioButton()
         Me.NormalPrecompression = New System.Windows.Forms.RadioButton()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.StartButton = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ProgressLog = New System.Windows.Forms.RichTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -184,14 +184,16 @@ Partial Class Form1
         Me.NormalPrecompression.Text = "Normal"
         Me.NormalPrecompression.UseVisualStyleBackColor = True
         '
-        'Button3
+        'StartButton
         '
-        Me.Button3.Location = New System.Drawing.Point(9, 216)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(290, 23)
-        Me.Button3.TabIndex = 8
-        Me.Button3.Text = "Start"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.StartButton.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.StartButton.Location = New System.Drawing.Point(9, 216)
+        Me.StartButton.Name = "StartButton"
+        Me.StartButton.Size = New System.Drawing.Size(383, 29)
+        Me.StartButton.TabIndex = 8
+        Me.StartButton.Text = "Start"
+        Me.StartButton.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -265,7 +267,7 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Step1label)
-        Me.Panel1.Controls.Add(Me.Button3)
+        Me.Panel1.Controls.Add(Me.StartButton)
         Me.Panel1.Controls.Add(Me.InputFileTextbox)
         Me.Panel1.Controls.Add(Me.GroupBox2)
         Me.Panel1.Controls.Add(Me.Button1)
@@ -312,7 +314,7 @@ Partial Class Form1
     Friend WithEvents BrutePrecompression As RadioButton
     Friend WithEvents IntensePrecompression As RadioButton
     Friend WithEvents NormalPrecompression As RadioButton
-    Friend WithEvents Button3 As Button
+    Friend WithEvents StartButton As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents ProgressLog As RichTextBox
     Friend WithEvents Label2 As Label

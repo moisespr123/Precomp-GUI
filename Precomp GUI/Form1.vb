@@ -129,6 +129,10 @@
     End Sub
 
     Private Sub StartButton_Click(sender As Object, e As EventArgs) Handles StartButton.Click
+        If Not My.Computer.FileSystem.FileExists("precomp v0.4.7.exe") Then
+            MsgBox("precomp v0.4.7.exe does not exist. Cannot proceed.")
+            Exit Sub
+        End If
         Dim OutputPathString As String = String.Empty
         If Not String.IsNullOrEmpty(OutputFileTextbox.Text) Then
             If Not IO.Directory.Exists(OutputFileTextbox.Text) Then IO.Directory.CreateDirectory(IO.Path.GetDirectoryName(OutputFileTextbox.Text))

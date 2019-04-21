@@ -141,13 +141,19 @@
             If Not IO.Directory.Exists(OutputFileTextbox.Text) Then IO.Directory.CreateDirectory(IO.Path.GetDirectoryName(OutputFileTextbox.Text))
             OutputPathString = "-o""" + OutputFileTextbox.Text + """"
         End If
-        Dim Params As String = "-d9999 -cn -e "
-        If VerboseLogging.Checked Then Params += "-v "
-        If IntensePrecompression.Checked Then
-            Params += "-intense "
-        ElseIf BrutePrecompression.Checked Then
-            Params += "-brute "
+        Dim Params As String = String.Empty
+        If PrecompressRadiobutton.Checked Then
+            Params = "-d9999 -cn -e "
+
+            If IntensePrecompression.Checked Then
+                Params += "-intense "
+            ElseIf BrutePrecompression.Checked Then
+                Params += "-brute "
+            End If
+        Else
+            Params = "-r "
         End If
+        If VerboseLogging.Checked Then Params += "-v "
         Params += OutputPathString + " """ + InputFileTextbox.Text + """ "
         StartButton.Enabled = False
         StartButton.Text = "Running..."

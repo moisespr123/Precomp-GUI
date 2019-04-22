@@ -45,9 +45,10 @@ Partial Class Form1
         Me.ClearLogButton = New System.Windows.Forms.Button()
         Me.SaveLogButton = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.VerboseLogging = New System.Windows.Forms.CheckBox()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.VerboseLogging = New System.Windows.Forms.CheckBox()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -216,7 +217,7 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ProgressLog.Location = New System.Drawing.Point(6, 25)
         Me.ProgressLog.Name = "ProgressLog"
-        Me.ProgressLog.Size = New System.Drawing.Size(380, 185)
+        Me.ProgressLog.Size = New System.Drawing.Size(380, 206)
         Me.ProgressLog.TabIndex = 10
         Me.ProgressLog.Text = ""
         '
@@ -224,7 +225,7 @@ Partial Class Form1
         '
         Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(9, 256)
+        Me.Label2.Location = New System.Drawing.Point(9, 277)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(122, 13)
         Me.Label2.TabIndex = 11
@@ -234,7 +235,7 @@ Partial Class Form1
         '
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(358, 256)
+        Me.Label3.Location = New System.Drawing.Point(358, 277)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(28, 13)
         Me.Label3.TabIndex = 12
@@ -253,7 +254,7 @@ Partial Class Form1
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(802, 281)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(802, 302)
         Me.TableLayoutPanel1.TabIndex = 13
         '
         'Panel2
@@ -266,13 +267,13 @@ Partial Class Form1
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(404, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(395, 275)
+        Me.Panel2.Size = New System.Drawing.Size(395, 296)
         Me.Panel2.TabIndex = 1
         '
         'ClearLogButton
         '
         Me.ClearLogButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ClearLogButton.Location = New System.Drawing.Point(136, 216)
+        Me.ClearLogButton.Location = New System.Drawing.Point(136, 237)
         Me.ClearLogButton.Name = "ClearLogButton"
         Me.ClearLogButton.Size = New System.Drawing.Size(122, 23)
         Me.ClearLogButton.TabIndex = 14
@@ -282,7 +283,7 @@ Partial Class Form1
         'SaveLogButton
         '
         Me.SaveLogButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SaveLogButton.Location = New System.Drawing.Point(264, 216)
+        Me.SaveLogButton.Location = New System.Drawing.Point(264, 237)
         Me.SaveLogButton.Name = "SaveLogButton"
         Me.SaveLogButton.Size = New System.Drawing.Size(122, 23)
         Me.SaveLogButton.TabIndex = 13
@@ -291,6 +292,7 @@ Partial Class Form1
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.LinkLabel1)
         Me.Panel1.Controls.Add(Me.VerboseLogging)
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.Label2)
@@ -305,12 +307,8 @@ Partial Class Form1
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(3, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(395, 275)
+        Me.Panel1.Size = New System.Drawing.Size(395, 296)
         Me.Panel1.TabIndex = 0
-        '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'VerboseLogging
         '
@@ -322,12 +320,26 @@ Partial Class Form1
         Me.VerboseLogging.Text = "Verbose Logging"
         Me.VerboseLogging.UseVisualStyleBackColor = True
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(9, 262)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(119, 13)
+        Me.LinkLabel1.TabIndex = 13
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Precomp by: schnaader"
+        '
         'Form1
         '
         Me.AllowDrop = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(802, 281)
+        Me.ClientSize = New System.Drawing.Size(802, 302)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "Form1"
         Me.Text = "Precomp GUI"
@@ -370,4 +382,5 @@ Partial Class Form1
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents VerboseLogging As CheckBox
+    Friend WithEvents LinkLabel1 As LinkLabel
 End Class

@@ -5,5 +5,7 @@ This is a GUI for the precomp command line utility.
 
 It allows you to precompress and recompress files. It supports standard, intense and brute precompression modes.
 
+More details and instructions at my website: [https://moisescardona.me/precomp-gui/](https://moisescardona.me/precomp-gui/)
+
 Precomp is made by Christian Schneider.  
 Precomp repository [https://github.com/schnaader/precomp-cpp](https://github.com/schnaader/precomp-cpp)
